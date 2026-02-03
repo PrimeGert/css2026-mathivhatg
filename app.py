@@ -16,7 +16,7 @@ if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
 
 # Sidebar toggle
-st.sidebar.markdown("### 🌙 Appearance")
+st.sidebar.markdown("### Appearance")
 st.session_state.dark_mode = st.sidebar.toggle(
     "Dark mode",
     value=st.session_state.dark_mode
