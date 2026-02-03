@@ -1,4 +1,4 @@
-# Gerald Mathivha – Profile
+# Thilivhali Mathivha – Profile
 
 This Streamlit app presents my academic, and technical profile,
 including my skills, experience, education, and research interests.
