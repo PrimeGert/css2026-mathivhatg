@@ -10,18 +10,80 @@ st.set_page_config(
 )
 
 # Theme Toggle 
+
+# Initialize session state
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
 
-st.sidebar.markdown("### Appearance")
-st.session_state.dark_mode = st.sidebar.toggle("Dark mode", value=st.session_state.dark_mode)
+# Sidebar toggle
+st.sidebar.markdown("### 🌙 Appearance")
+st.session_state.dark_mode = st.sidebar.toggle(
+    "Dark mode",
+    value=st.session_state.dark_mode
+)
 
+# Apply dark mode styles conditionally
 if st.session_state.dark_mode:
-    st.markdown("""
+    st.markdown(
+        """
         <style>
-        body { background-color: #0e1117; color: #fafafa; }
+        /* Main app background */
+        .stApp {
+            background-color: #0e1117;
+            color: #fafafa;
+        }
+
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #161b22;
+        }
+
+        /* Headers */
+        h1, h2, h3, h4 {
+            color: #fafafa;
+        }
+
+        /* Text */
+        p, span, label {
+            color: #e6edf3;
+        }
+
+        /* Metrics */
+        div[data-testid="metric-container"] {
+            background-color: #161b22;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #238636;
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* Links */
+        a {
+            color: #58a6ff;
+        }
         </style>
-    """, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
+###########################################################
+
+# if "dark_mode" not in st.session_state:
+#     st.session_state.dark_mode = False
+
+# st.sidebar.markdown("### Appearance")
+# st.session_state.dark_mode = st.sidebar.toggle("Dark mode", value=st.session_state.dark_mode)
+
+# if st.session_state.dark_mode:
+#     st.markdown("""
+#         <style>
+#         body { background-color: #0e1117; color: #fafafa; }
+#         </style>
+#     """, unsafe_allow_html=True)
 
 #  Sidebar 
 st.sidebar.title("Thilivhali Mathivha")
